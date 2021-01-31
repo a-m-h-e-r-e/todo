@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - To-do list in pure JavaScript</title>
+  <link rel="stylesheet" href="{% static "todo_app/style.css" %}">
+
+</head>
+<body>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container flex lists">
+  <div class="one_list">
+    <div class="header_title">
+      <span class="input_title">Your to do list</span>
+      <button type="button" class="edit_title_button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    </div>
+    <form action="{% url 'todo_app:add_task' %}" method='get' >
+      <input type="text" id="input_task" name="input_task" placeholder="New task"></input>
+      <button type="submit" value="submit" id="add_button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    
+    <div>
+      <ul id="task_list">
+         {% for task in task_list %}
+           {% if not task.completed %}
+            <li>
+              <input type="checkbox" class="checkbox" name="undone" value={{task.id}} data-catid="{{task.id}}"
+              ></input>
+              <span class="input">{{task.task}}</span>
+              <button type="button" class="edit_task_button" id="{{task.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+              <button type="button" class="delete" data-catid='{{task.id}}'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </li>
+            {% endif %}
+        {% endfor %}
+
+      </ul>	
+      <h2 id="completed_title">Completed</h2>
+      <ul id="completed_list">
+        {% for task in task_list %}
+          {% if task.completed %}
+            <li class='complete'>
+              <input type="checkbox" class="checkbox" name='done' checked value={{task.id}} data-catid='{{task.id}}'></input>
+              <span class="input" >{{task.task}}</span>
+              <button type="button" class="delete" data-catid='{{task.id}}'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>				
+    </div>
+    </form>
+  </div>
+  <ul>
+   
+  </ul>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static "todo_app/script.js" %}"></script>
+</body>
+</html>

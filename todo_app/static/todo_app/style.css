@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	background-color: #333; 
+	width: 100%;
+	margin: 0;  
+}
+
+p, button, input {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1em;
+	padding: 5px 10px;
+	margin: 2px;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	padding: 5px;
+	display: flex;
+	align-items: baseline;
+}
+
+input {
+	font-size:1.1em;
+	padding:10px 10px 10px 5px;
+	border:none;
+	background-color: black;
+	color: white;
+}
+
+input:focus { 
+	outline: none; 
+}
+
+span {
+	width: 460px;
+	margin-right: 10px;
+	padding: 6px 11px;
+}
+
+span:focus { 
+	outline: none;
+	border: 1px solid slategrey; 
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.span_editable {
+	outline: none;
+	border: 1px solid slategrey; 
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.title_editable {
+	outline: none;
+	border: 1px solid slategrey; 
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.header_title {
+	display: flex;
+	align-items: center;
+	border-bottom:1px solid slategrey;
+	margin-bottom: 30px;
+}
+
+.input_title {
+	font-size:2em;
+	font-weight: bold;
+	color: white;
+}
+
+.input_title:focus { 
+	outline: none; 
+}
+
+.edit_task_button, .edit_title_button {
+	background-color: grey;
+	color: white;
+	border: 0px;
+	border-radius: 25px;
+}
+
+.edit_task_button:focus, .edit_title_button:focus, #add_button:focus { 
+	outline: none; 
+}
+
+#input_task {
+	width: 85%;
+	color: black;
+	background-color: white;
+	border-radius: 25px;
+	padding: 10px 50px 10px 15px;
+}
+
+#add_button {
+	margin-left: -45px;
+	background-color: dodgerblue;
+	color: white;
+	border: 0px;
+	border-radius: 25px;
+}
+
+[type=checkbox] {
+	margin: 0 10px 0 0;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+	margin-top: 5em;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.one_list {
+	width: 450px;
+	background-color: black;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+}
+
+.complete {
+	text-decoration: line-through;
+	color: gray;
+}
+
+.delete {
+	background-color: tomato;
+	color: white;
+	border: 0px;
+	border-radius: 25px;
+}
